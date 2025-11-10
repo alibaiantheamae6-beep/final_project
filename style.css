@@ -1,0 +1,217 @@
+body {
+    background-image: url('https://www.philhealth.gov.ph/news/2015/images/ndmu_shares2.jpg'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-attachment: fixed; 
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+
+.container {
+    background: rgba(255, 255, 255, 0.486);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 5 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+}
+
+h2 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 80px;
+    font-weight: 1000;
+}
+
+/* Form and Inputs */
+#message-box {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    display: none; /* Hidden by default */
+}
+
+.message-success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+.message-error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #020202;
+}
+
+input:not([type="radio"]), select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #1565C0;
+    outline: none;
+}
+
+/* Buttons */
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
+    flex-grow: 1;
+}
+
+#saveBtn, #updateBtn {
+    background-color: #1565C0;
+    color: white;
+}
+
+#saveBtn:hover, #updateBtn:hover {
+    background-color: #0d47a1;
+}
+
+#resetBtn {
+    background-color: #FFC107;
+    color: #333;
+}
+
+#resetBtn:hover {
+    background-color: #ffb300;
+}
+
+/* Search Bar */
+#search-section {
+    margin: 30px 0;
+    padding: 15px;
+    background: #f0f4f8;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#search-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures rounded corners are respected */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+th {
+    background: #212121;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.actions button {
+    margin: 0 5px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.edit {
+    background: #4CAF50;
+    color: white;
+}
+.edit:hover {
+    background: #388e3c;
+}
+
+.delete {
+    background: #E53935;
+    color: white;
+}
+.delete:hover {
+    background: #c62828;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%; /* Space for the label */
+        text-align: left;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #555;
+    }
+    .actions {
+        text-align: right;
+    }
+}
