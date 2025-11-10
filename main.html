@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Record Manager (IndexedDB CRUD)</title>
+    <!-- Load custom styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Student Record Management</h2>
+        
+        <!-- Message Box -->
+        <div id="message-box" style="display:none;"></div>
+
+        <form id="recordForm">
+            <!-- Hidden field for storing the ID of the record being edited -->
+            <input type="hidden" id="recordId">
+
+            <label for="studentId">Student ID (Unique)</label>
+            <input type="text" id="studentId" required placeholder="e.g., S1234567">
+
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" required placeholder="e.g., Kea Viejo">
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required placeholder="e.g., kea@university.edu">
+
+            <label for="course">Course</label>
+            <select id="course" required>
+                <option value="">-- Select Course --</option>
+                <option>BS Computer Science</option>
+                <option>BS Information Technology</option>
+                <option>BS Data Science</option>
+                <option>Bachelor of Arts</option>
+            </select>
+            
+            <label for="yearLevel">Year Level</label>
+            <select id="yearLevel" required>
+                <option value="">-- Select Year Level --</option>
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option>3rd Year</option>
+                <option>4th Year</option>
+            </select>
+
+            <div class="button-group">
+                <button type="submit" id="saveBtn">Save New Record</button>
+                <button type="submit" id="updateBtn" style="display:none;">Update Record</button>
+                <button type="button" id="resetBtn">Reset</button>
+            </div>
+        </form>
+        
+        <!-- Search Bar -->
+        <div id="search-section">
+            <input type="text" id="search-input" placeholder="Search by Name, ID, or Course...">
+        </div>
+
+        <!-- Dynamic Records Table -->
+        <table id="recordsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Student ID</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Year Level</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Records will be populated here by script.js -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Load application logic -->
+    <script src="script.js"></script>
+</body>
+</html>
